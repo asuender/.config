@@ -68,6 +68,8 @@ keys = [
         lazy.spawncmd(),
         desc="Spawn a command using a prompt widget"),
 
+    Key([mod], "e", lazy.spawn("thunar"), desc="Launch thunar file manager"),
+
     Key([], "XF86MonBrightnessUp", lazy.spawn("backlight_control +10")),
     Key([], "XF86MonBrightnessDown", lazy.spawn("backlight_control -10")),
 
