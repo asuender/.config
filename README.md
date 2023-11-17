@@ -1,1 +1,3 @@
-# dotfiles
+# config
+
+My personal config repo.
