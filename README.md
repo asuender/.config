@@ -6,6 +6,6 @@ My personal config repo.
 
 | File         | Destination    | Description            |
 |--------------|----------------|------------------------|
-| `.gitconfig` | `~/.gitconfig` | git configuration file |
+| `.gitconfig` | `~/.gitconfig` | git configuration file (requires `git delta` pager;) |
 |              |                |                        |
 |              |                |                        |
