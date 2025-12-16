@@ -6,5 +6,6 @@ FONTS_DIR="$HOME/.local/share/fonts"
 mkdir -p "$CACHE_DIR"
 mkdir -p "$FONTS_DIR/FiraCode"
 
-curl -L "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.tar.xz" -o "$CACHE_DIR/FiraCode.tar.xz" && \
-    tar -xJf "$CACHE_DIR/FiraCode.tar.xz" -C "$FONTS_DIR/FiraCode"
+curl -L "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.tar.xz" -o "$CACHE_DIR/FiraCode.tar.xz" &&
+  tar -xJf "$CACHE_DIR/FiraCode.tar.xz" -C "$FONTS_DIR/FiraCode" &&
+  fc-cache -fv
