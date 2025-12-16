@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+dry_run="0"
+
+if [ -z "$XDG_CONFIG_HOME" ]; then
+  echo "\$XDG_CONFIG_HOME not set, using ~/.config"
+  XDG_CONFIG_HOME=$HOME/.config
+fi
+
+if [[ $1 == "--dry" ]]; then
+  dry_run="1"
+fi
+
+log() {
+  if [[ $dry_run == "1" ]]; then
+    echo "[DRY_RUN]: $1"
+  else
+    echo "$1"
+  fi
+}
+
+copy() {
+  if [[ $dry_run == "0" ]]; then
+    log "Removing: $2"
+    rm $2
+  fi
+
+  log "Copying: $1 to $2"
+  cp $1 $2
+}
+
+copy ./.env/.zshrc $HOME/.zshrc
