@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
+# Note: this file is for tools that should be installed only once;
+# see also './.setup/packages',
+
 sudo apt update
-sudo apt install -y neovim fzf git-delta tmux fd-find
 
 curl -f https://zed.dev/install.sh | sh
 curl -LsSf https://astral.sh/uv/install.sh | sh

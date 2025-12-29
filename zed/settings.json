@@ -7,7 +7,9 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "vim_mode": true,
+  "restore_on_startup": "last_session",
+  "tab_size": 2,
+  "vim_mode": false,
   "relative_line_numbers": "enabled",
   "remove_trailing_whitespace_on_save": true,
   "icon_theme": "Material Icon Theme",
@@ -29,11 +31,18 @@
     "material-icon-theme": true,
     "one-dark-pro": true,
     "toml": true,
+    "basher": true,
   },
   "languages": {
     "Python": {
       "language_servers": ["!basedpyright", "ty"],
       "format_on_save": "on",
+    },
+    "Markdown": {
+      "format_on_save": "on",
+    },
+    "Shell Script": {
+      "tab_size": 2,
     },
   },
   "show_edit_predictions": false,
