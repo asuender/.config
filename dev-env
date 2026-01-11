@@ -43,6 +43,13 @@ copy() {
 
 if [[ $subset =~ ^(all|scripts)$ ]]; then
   copy "./scripts/compare-solution" "$HOME/.local/bin"
+
+  # Copy helper scripts
+  mkdir -p "$HOME/.local/bin/helpers"
+  mkdir -p "$HOME/.journal"
+  copy "./.helpers/tmux-quicky" "$HOME/.local/bin/helpers"
+  copy "./.helpers/tmux-clone" "$HOME/.local/bin/helpers"
+  copy "./.helpers/journal" "$HOME/.local/bin/helpers"
 fi
 
 if [[ $subset == "all" ]]; then

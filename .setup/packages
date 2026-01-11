@@ -6,9 +6,13 @@
 # setup scripts that either run for too long or are not meant to be executed
 # again after being installed once.
 
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg
+echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" | sudo tee /etc/apt/sources.list.d/charm.list
+
 sudo apt update
 sudo apt install -y zsh shfmt shellcheck \
-  neovim fzf git-delta tmux fd-find
+  neovim fzf git-delta tmux fd-find bat gum shellcheck
 
 # Setup ZSH
 hash -r

@@ -44,6 +44,24 @@
     "Shell Script": {
       "tab_size": 2,
     },
+    "TypeScript": {
+      "formatter": "prettier",
+    },
+    "TSX": {
+      "formatter": "prettier",
+    },
+    "Rust": {
+      "tab_size": 4,
+    },
+  },
+  "lsp": {
+    "eslint": {
+      "settings": {
+        "experimental": {
+          "useFlatConfig": true,
+        },
+      },
+    },
   },
   "show_edit_predictions": false,
 }

@@ -1,10 +1,34 @@
 #!/usr/bin/env bash
 
-# Note: this file is for tools that should be installed only once;
-# see also './.setup/packages',
+# Tool definitions: "Display Name|install command"
+tools=(
+  "Zed Editor|curl -f https://zed.dev/install.sh | sh"
+  "uv (Python)|curl -LsSf https://astral.sh/uv/install.sh | sh"
+  "Claude Code|curl -fsSL https://claude.ai/install.sh | bash"
+  "Rust (rustup)|curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh"
+)
 
-sudo apt update
+# Build selection list
+names=()
+for tool in "${tools[@]}"; do
+  names+=("${tool%%|*}")
+done
 
-curl -f https://zed.dev/install.sh | sh
-curl -LsSf https://astral.sh/uv/install.sh | sh
-curl -fsSL https://claude.ai/install.sh | bash
+# Let user select tools
+selected=$(printf '%s\n' "${names[@]}" | gum choose --no-limit --header "Select tools to install:")
+
+# Exit if nothing selected
+[[ -z "$selected" ]] && echo "No tools selected." && exit 0
+
+# Install selected tools
+while IFS= read -r name; do
+  for tool in "${tools[@]}"; do
+    if [[ "${tool%%|*}" == "$name" ]]; then
+      cmd="${tool#*|}"
+      gum spin --spinner dot --show-output --title "Installing $name..." -- bash -c "$cmd"
+      break
+    fi
+  done
+done <<< "$selected"
+
+echo "Done!"

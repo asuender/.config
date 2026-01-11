@@ -14,9 +14,6 @@ shell-integration-features = ssh-terminfo
 # Fallback if terminfo installation fails
 shell-integration-features = ssh-env
 
-# Claude Code
-keybind = shift+enter=text:\x1b\r
-
 # This ensures I can press Alt-1,2,... for tmux
-macos-option-as-alt = true
+macos-option-as-alt = right
 
