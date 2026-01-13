@@ -132,6 +132,8 @@ source <(fzf --zsh)
 eval "$(uv generate-shell-completion zsh)"
 eval "$(zoxide init zsh)"
 
+export TMS_CONFIG_FILE="$HOME/.config/tms/config.toml"
+
 # Custom keybindings
 
 FC_SEARCH_DIRS=("$HOME/coding" "$HOME/mermec" "$HOME/.config" "$HOME/.claude")
