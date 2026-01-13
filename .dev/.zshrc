@@ -70,7 +70,7 @@ plugins=(
   zsh-syntax-highlighting
 )
 
-source $ZSH/oh-my-zsh.sh
+[[ -f "$ZSH/oh-my-zsh.sh" ]] && source "$ZSH/oh-my-zsh.sh"
 
 # Set personal aliases, overriding those provided by Oh My Zsh libs,
 # plugins, and themes. Aliases can be placed here, though Oh My Zsh
@@ -86,10 +86,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Basic stuff
 
-export PATH=$HOME/.local/bin:$PATH
-[[ -d "/opt/homebrew/opt/python@3.12/libexec/bin" ]] &&
-  export PATH="/opt/homebrew/opt/python@3.12/libexec/bin:$PATH"
-
 export VISUAL=nvim
 export EDITOR="$VISUAL"
 
@@ -100,23 +96,39 @@ alias tm="tmux new-session -A -s default"
 alias tma="tmux a"
 alias clear='clear && [ -n "$TMUX" ] && tmux clear-history'
 
-if [[ -d "$HOME/.fzf/bin" && ! "$PATH" == *$HOME/.fzf/bin* ]]; then
-  export PATH="$PATH:$HOME/.fzf/bin"
+export PATH=$HOME/.local/bin:$PATH
+[[ -f "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"
+[[ -d "$HOME/.cargo/bin" && ":$PATH:" != *":$HOME/.cargo/bin:"* ]] && export PATH="$HOME/.cargo/bin:$PATH"
+
+# Omarchy defaults (aliases, functions, envs)
+if [[ -d "$HOME/.local/share/omarchy/default/bash" ]]; then
+  source "$HOME/.local/share/omarchy/default/bash/aliases"
+  source "$HOME/.local/share/omarchy/default/bash/functions"
+  source "$HOME/.local/share/omarchy/default/bash/envs"
 fi
-source <(fzf --zsh)
+
+[[ -d "/opt/homebrew/opt/python@3.12/libexec/bin" ]] &&
+  export PATH="/opt/homebrew/opt/python@3.12/libexec/bin:$PATH"
+
+# pnpm: check macOS and Linux paths
+if [[ -d "$HOME/Library/pnpm" ]]; then
+  export PNPM_HOME="$HOME/Library/pnpm"
+elif [[ -d "$HOME/.local/share/pnpm" ]]; then
+  export PNPM_HOME="$HOME/.local/share/pnpm"
+fi
+[[ -n "$PNPM_HOME" && ":$PATH:" != *":$PNPM_HOME:"* ]] && export PATH="$PNPM_HOME:$PATH"
 
 # Shell completions
-
-export PNPM_HOME="/Users/asuender/Library/pnpm"
-case ":$PATH:" in
-*":$PNPM_HOME:"*) ;;
-*) export PATH="$PNPM_HOME:$PATH" ;;
-esac
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
+if [[ -d "$HOME/.fzf/bin" && ! "$PATH" == *$HOME/.fzf/bin* ]]; then
+  export PATH="$PATH:$HOME/.fzf/bin"
+fi
+
+source <(fzf --zsh)
 eval "$(uv generate-shell-completion zsh)"
 eval "$(zoxide init zsh)"
 
@@ -151,5 +163,3 @@ bindkey "^g" _folder_changer
 
 # Resolve fd path for folder changer
 FC_FD_CMD="$(command -v fd 2>/dev/null || echo fd)"
-
-. "$HOME/.cargo/env"
