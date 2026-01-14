@@ -29,8 +29,6 @@ copy_dir() {
 }
 
 if [[ $subset =~ ^(all|scripts)$ ]]; then
-  copy "./.local/bin/compare-solution" "$HOME/.local/bin"
-
   # Copy helper scripts
   mkdir -p "$HOME/.local/bin/helpers"
   mkdir -p "$HOME/.journal"
@@ -49,9 +47,7 @@ if [[ $subset == "all" ]]; then
     fi
   done
 
-  # Deploy .claude
   copy_dir "./.claude" "$HOME/.claude"
-
-  # Deploy .shell
   copy_dir "./.shell" "$HOME/.shell"
+  copy_dir "./.templates" "$HOME/.templates"
 fi
