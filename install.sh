@@ -48,4 +48,7 @@ if [[ $subset == "all" ]]; then
       copy_dir "./.config/$dir" "$XDG_CONFIG_HOME/$dir"
     fi
   done
+
+  # Deploy .claude
+  copy_dir "./.claude" "$HOME/.claude"
 fi
