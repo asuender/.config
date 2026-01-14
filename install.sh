@@ -22,6 +22,12 @@ copy() {
   cp "$1" "$2"
 }
 
+copy_dir() {
+  echo "Deploying $1 to $2"
+  mkdir -p "$2"
+  cp -r "$1/." "$2/"
+}
+
 if [[ $subset =~ ^(all|scripts)$ ]]; then
   copy "./.local/bin/compare-solution" "$HOME/.local/bin"
 
@@ -39,9 +45,7 @@ if [[ $subset == "all" ]]; then
   # Deploy .config directories
   for dir in alacritty ghostty git opencode tms tmux zed; do
     if [ -d "./.config/$dir" ]; then
-      echo "Deploying .config/$dir"
-      mkdir -p "$XDG_CONFIG_HOME/$dir"
-      cp -r "./.config/$dir/." "$XDG_CONFIG_HOME/$dir/"
+      copy_dir "./.config/$dir" "$XDG_CONFIG_HOME/$dir"
     fi
   done
 fi
