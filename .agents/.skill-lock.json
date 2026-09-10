@@ -6,9 +6,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/anomalyco/opentui.git",
       "skillPath": "packages/web/src/content/SKILL.md",
-      "skillFolderHash": "cb80f642713eb75cfaa369ec22f2cc2bc59d189d",
+      "skillFolderHash": "0f56f62f3e7487cbe54e32a2c020b8ba462f9204",
       "installedAt": "2026-07-01T21:05:17.217Z",
-      "updatedAt": "2026-08-19T06:20:32.304Z"
+      "updatedAt": "2026-09-10T17:43:40.173Z"
     },
     "migrate-oxlint": {
       "source": "oxc-project/oxc",
@@ -53,10 +53,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/mattpocock/skills.git",
       "skillPath": "skills/productivity/grilling/SKILL.md",
-      "skillFolderHash": "0d40d978f1a588971a11ea7ae85b208e78102dc3",
-      "pluginName": "mattpocock-skills",
+      "skillFolderHash": "f0732035b8b1b60ae39454e4191caef32fa91903",
       "installedAt": "2026-08-19T06:24:39.639Z",
-      "updatedAt": "2026-08-19T06:24:39.639Z"
+      "updatedAt": "2026-09-10T17:43:41.593Z"
     },
     "handoff": {
       "source": "mattpocock/skills",
@@ -85,6 +84,42 @@
       "skillFolderHash": "549e7d8728550f1f3fc72572b8601c3b11e801ac",
       "installedAt": "2026-08-19T06:39:18.134Z",
       "updatedAt": "2026-08-19T06:39:18.134Z"
+    },
+    "orpc": {
+      "source": "middleapi/orpc",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/middleapi/orpc.git",
+      "skillPath": "skills/orpc/SKILL.md",
+      "skillFolderHash": "6c4b4526d7526aafde51394fed59f7baf6d7b2c8",
+      "installedAt": "2026-08-29T15:01:13.590Z",
+      "updatedAt": "2026-09-10T17:43:43.979Z"
+    },
+    "orpc-contract": {
+      "source": "middleapi/orpc",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/middleapi/orpc.git",
+      "skillPath": "skills/orpc-contract/SKILL.md",
+      "skillFolderHash": "7e854bb13ecefca583d1cfbe0b0f617adbc3f544",
+      "installedAt": "2026-08-29T15:01:13.592Z",
+      "updatedAt": "2026-08-29T15:01:13.592Z"
+    },
+    "orpc-migrate": {
+      "source": "middleapi/orpc",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/middleapi/orpc.git",
+      "skillPath": "skills/orpc-migrate/SKILL.md",
+      "skillFolderHash": "68fdee41a95d71b7b1f964e3588376c87b6d8ce6",
+      "installedAt": "2026-08-29T15:01:13.592Z",
+      "updatedAt": "2026-09-10T17:43:46.941Z"
+    },
+    "orpc-openapi": {
+      "source": "middleapi/orpc",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/middleapi/orpc.git",
+      "skillPath": "skills/orpc-openapi/SKILL.md",
+      "skillFolderHash": "a56830d7e6d317c5006304a851c94f52d689d3ec",
+      "installedAt": "2026-08-29T15:01:13.592Z",
+      "updatedAt": "2026-09-10T17:43:49.650Z"
     }
   },
   "dismissed": {
