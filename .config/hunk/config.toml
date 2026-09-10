@@ -1,0 +1,31 @@
+# Match the previous Lumen setup where Hunk has an equivalent action.
+theme = "catppuccin-mocha"
+
+[keybindings]
+# Lumen uses Tab to show or hide its sidebar.
+"hunk.view.toggleFilesPane" = "tab"
+"hunk.app.toggleFocusArea" = false
+
+# Lumen file and commit navigation.
+"hunk.review.previousFile" = "ctrl+k"
+"hunk.review.nextFile" = "ctrl+j"
+"hunk.history.previousCommit" = ["up", "k", "ctrl+h"]
+"hunk.history.nextCommit" = ["down", "j", "ctrl+l"]
+
+# Hunk's filter is the closest equivalent to Lumen's file picker/global search.
+"hunk.review.focusFilter" = ["ctrl+p", "ctrl+f"]
+
+# Lumen-style horizontal scrolling and hunk navigation.
+"hunk.review.scrollCodeLeft" = ["left", "shift+left", "h"]
+"hunk.review.scrollCodeRight" = ["right", "shift+right", "l"]
+"hunk.review.previousHunk" = "{"
+"hunk.review.nextHunk" = "}"
+
+# Lumen's '=' returns to the side-by-side presentation.
+"hunk.view.layoutSplit" = "="
+
+# Lumen uses i to annotate the current selection, hunk, or file.
+"hunk.review.startNote" = "i"
+
+# Keep Lumen's explicit Ctrl-C quit binding alongside q.
+"hunk.app.quit" = ["q", "ctrl+c"]
