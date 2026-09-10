@@ -1,0 +1,29 @@
+theme = "catppuccin-mocha"
+mode = "stack"
+line_numbers = true
+wrap_lines = false
+hunk_headers = true
+menu_bar = true
+agent_notes = false
+copy_decorations = false
+cursor_line = "row"
+
+[keybindings]
+"hunk.view.toggleFilesPane" = "tab"
+"hunk.app.toggleFocusArea" = false
+
+"hunk.review.previousFile" = "ctrl+k"
+"hunk.review.nextFile" = "ctrl+j"
+"hunk.history.previousCommit" = ["up", "k", "ctrl+h"]
+"hunk.history.nextCommit" = ["down", "j", "ctrl+l"]
+
+# Hunk's filter is the closest equivalent to Lumen's file picker/global search.
+"hunk.review.focusFilter" = ["ctrl+p", "ctrl+f"]
+
+# Lumen-style horizontal scrolling and hunk navigation.
+"hunk.review.scrollCodeLeft" = ["left", "shift+left", "h"]
+"hunk.review.scrollCodeRight" = ["right", "shift+right", "l"]
+"hunk.review.previousHunk" = "{"
+"hunk.review.nextHunk" = "}"
+
+"hunk.app.quit" = ["q", "ctrl+c"]
